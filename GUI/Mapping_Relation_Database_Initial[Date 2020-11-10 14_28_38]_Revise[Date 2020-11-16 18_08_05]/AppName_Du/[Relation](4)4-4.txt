@@ -1,0 +1,1 @@
+XCUIElementTypeButton[3] (207,375)(342,420) V.S. android.widget.TextView[2] (772,1190)(970,1322)

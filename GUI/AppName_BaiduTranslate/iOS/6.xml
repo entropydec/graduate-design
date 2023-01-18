@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><AppiumAUT><XCUIElementTypeApplication type="XCUIElementTypeApplication" name="Baidu Translate" label="Baidu Translate" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+        <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+          <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+            <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+              <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="20"/>
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="20" width="414" height="44">
+                  <XCUIElementTypeButton type="XCUIElementTypeButton" enabled="true" visible="true" x="0" y="20" width="60" height="44"/>
+                  <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Translation notes setting" name="Translation notes setting" label="Translation notes setting" enabled="true" visible="true" x="60" y="20" width="294" height="44"/>
+                </XCUIElementTypeOther>
+                <XCUIElementTypeTable type="XCUIElementTypeTable" enabled="true" visible="true" x="0" y="64" width="414" height="672">
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="true" x="0" y="64" width="414" height="51">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Kana notes for Japanese" name="Kana notes for Japanese" label="Kana notes for Japanese" enabled="true" visible="true" x="17" y="64" width="332" height="51"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="16" y="114" width="382" height="1"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" value="1" name="slide closed" label="slide closed" enabled="true" visible="true" x="351" y="69" width="46" height="41"/>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="true" x="0" y="115" width="414" height="51">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Rome sound pronunciation notes for Korean" name="Rome sound pronunciation notes for Korean" label="Rome sound pronunciation notes for Korean" enabled="true" visible="true" x="17" y="115" width="332" height="51"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="16" y="165" width="382" height="1"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" value="1" name="slide closed" label="slide closed" enabled="true" visible="true" x="351" y="120" width="46" height="41"/>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="true" x="0" y="166" width="414" height="51">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Chinese Pinyin Annotation" name="Chinese Pinyin Annotation" label="Chinese Pinyin Annotation" enabled="true" visible="true" x="17" y="166" width="332" height="51"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="16" y="216" width="382" height="1"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" value="1" name="slide closed" label="slide closed" enabled="true" visible="true" x="351" y="171" width="46" height="41"/>
+                  </XCUIElementTypeCell>
+                </XCUIElementTypeTable>
+              </XCUIElementTypeOther>
+            </XCUIElementTypeOther>
+          </XCUIElementTypeOther>
+        </XCUIElementTypeOther>
+      </XCUIElementTypeOther>
+    </XCUIElementTypeOther>
+  </XCUIElementTypeWindow>
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736"/>
+  </XCUIElementTypeWindow>
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeStatusBar type="XCUIElementTypeStatusBar" enabled="true" visible="true" x="0" y="0" width="414" height="20">
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="20"/>
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="20">
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="No SIM" label="No SIM" enabled="true" visible="true" x="6" y="0" width="41" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" value="SSID" name="3 of 3 Wi-Fi bars" label="3 of 3 Wi-Fi bars" enabled="true" visible="true" x="52" y="0" width="14" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="3:05 PM" label="3:05 PM" enabled="true" visible="true" x="184" y="0" width="50" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="97% battery power, Charging" label="97% battery power, Charging" enabled="true" visible="true" x="374" y="0" width="35" height="20"/>
+      </XCUIElementTypeOther>
+    </XCUIElementTypeStatusBar>
+  </XCUIElementTypeWindow>
+</XCUIElementTypeApplication></AppiumAUT>

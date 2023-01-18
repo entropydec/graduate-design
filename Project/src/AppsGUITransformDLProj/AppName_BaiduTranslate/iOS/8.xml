@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><AppiumAUT><XCUIElementTypeApplication type="XCUIElementTypeApplication" name="Baidu Translate" label="Baidu Translate" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+        <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+          <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+            <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+              <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="20"/>
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="20" width="414" height="44">
+                  <XCUIElementTypeButton type="XCUIElementTypeButton" enabled="true" visible="true" x="0" y="20" width="60" height="44"/>
+                  <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Voice Speed Control" name="Voice Speed Control" label="Voice Speed Control" enabled="true" visible="true" x="60" y="20" width="294" height="44"/>
+                </XCUIElementTypeOther>
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="64" width="414" height="228"/>
+                <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Slow" name="Slow" label="Slow" enabled="true" visible="true" x="31" y="119" width="60" height="20"/>
+                <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Fast" name="Fast" label="Fast" enabled="true" visible="true" x="325" y="119" width="60" height="20"/>
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="61" y="147" width="2" height="9"/>
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="351" y="147" width="2" height="9"/>
+                <XCUIElementTypeSlider type="XCUIElementTypeSlider" value="50%" enabled="true" visible="true" x="58" y="159" width="298" height="21"/>
+                <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Use the scroll bar to adjust pronunciation speed when online.Have a try by clicking the following button." name="Use the scroll bar to adjust pronunciation speed when online.Have a try by clicking the following button." label="Use the scroll bar to adjust pronunciation speed when online.Have a try by clicking the following button." enabled="true" visible="true" x="43" y="214" width="328" height="59"/>
+                <XCUIElementTypeButton type="XCUIElementTypeButton" enabled="true" visible="true" x="152" y="332" width="110" height="34"/>
+                <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Welcome to use Baidu Translate! It's a free automatic translator that gives you instant multilingual translation." name="Welcome to use Baidu Translate! It's a free automatic translator that gives you instant multilingual translation." label="Welcome to use Baidu Translate! It's a free automatic translator that gives you instant multilingual translation." enabled="true" visible="true" x="30" y="396" width="354" height="37"/>
+              </XCUIElementTypeOther>
+            </XCUIElementTypeOther>
+          </XCUIElementTypeOther>
+        </XCUIElementTypeOther>
+      </XCUIElementTypeOther>
+    </XCUIElementTypeOther>
+  </XCUIElementTypeWindow>
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736"/>
+  </XCUIElementTypeWindow>
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeStatusBar type="XCUIElementTypeStatusBar" enabled="true" visible="true" x="0" y="0" width="414" height="20">
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="20"/>
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="20">
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="No SIM" label="No SIM" enabled="true" visible="true" x="6" y="0" width="41" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" value="SSID" name="3 of 3 Wi-Fi bars" label="3 of 3 Wi-Fi bars" enabled="true" visible="true" x="52" y="0" width="14" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="3:06 PM" label="3:06 PM" enabled="true" visible="true" x="184" y="0" width="50" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="97% battery power, Charging" label="97% battery power, Charging" enabled="true" visible="true" x="374" y="0" width="35" height="20"/>
+      </XCUIElementTypeOther>
+    </XCUIElementTypeStatusBar>
+  </XCUIElementTypeWindow>
+</XCUIElementTypeApplication></AppiumAUT>

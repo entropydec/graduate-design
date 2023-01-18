@@ -1,0 +1,14 @@
+[iOS]
+XCUIElementTypeOther[13](0,0)(414,20)
+XCUIElementTypeStaticText[1](60,20)(354,64)
+XCUIElementTypeTextView[0](20,84)(394,168)
+XCUIElementTypeStaticText[0](17,204)(397,222)
+XCUIElementTypeOther[1](0,0)(414,736)
+XCUIElementTypeOther[6](6,0)(47,20)
+XCUIElementTypeOther[7](52,0)(66,20)
+XCUIElementTypeOther[8](184,0)(234,20)
+XCUIElementTypeOther[9](374,0)(409,20)
+[Android]
+android.widget.TextView[0](462,125)(618,188)
+android.widget.EditText[0](41,258)(1039,808)
+android.widget.TextView[2](69,877)(827,926)

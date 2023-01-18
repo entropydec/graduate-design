@@ -1,0 +1,4 @@
+XCUIElementTypeImage[13] (374,122)(394,142) V.S. android.widget.ImageView[0] (979,380)(1031,432)
+XCUIElementTypeImage[17] (353,408)(373,429) V.S. android.widget.ImageView[1] (922,1168)(974,1220)
+XCUIElementTypeImage[21] (374,458)(394,479) V.S. android.widget.ImageView[2] (979,1306)(1031,1358)
+XCUIElementTypeImage[29] (374,651)(394,672) V.S. android.widget.ImageView[4] (979,1976)(1031,2028)

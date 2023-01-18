@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><AppiumAUT><XCUIElementTypeApplication type="XCUIElementTypeApplication" name="Baidu Translate" label="Baidu Translate" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+        <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+          <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+            <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+              <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="20"/>
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="20" width="414" height="44">
+                  <XCUIElementTypeButton type="XCUIElementTypeButton" enabled="true" visible="false" x="0" y="20" width="60" height="44"/>
+                  <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Personal data" name="Personal data" label="Personal data" enabled="true" visible="false" x="60" y="20" width="294" height="44"/>
+                </XCUIElementTypeOther>
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="64" width="414" height="34"/>
+                <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Only nicknames and avatars are visible to other users. Other information is only used for content recommendation and improvement of experience." name="Only nicknames and avatars are visible to other users. Other information is only used for content recommendation and improvement of experience." label="Only nicknames and avatars are visible to other users. Other information is only used for content recommendation and improvement of experience." enabled="true" visible="false" x="17" y="64" width="380" height="34"/>
+                <XCUIElementTypeTable type="XCUIElementTypeTable" enabled="true" visible="false" x="0" y="98" width="414" height="638">
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="false" x="0" y="98" width="414" height="75">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="My icon" name="My icon" label="My icon" enabled="true" visible="false" x="18" y="125" width="55" height="21"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="15" y="227" width="402" height="1"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="18" y="172" width="378" height="1"/>
+                    <XCUIElementTypeImage type="XCUIElementTypeImage" enabled="true" visible="false" x="348" y="107" width="56" height="57"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" enabled="false" visible="false" x="356" y="115" width="40" height="41"/>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="false" x="0" y="173" width="414" height="50">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Name" name="Name" label="Name" enabled="true" visible="false" x="18" y="187" width="41" height="22"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="18" y="222" width="378" height="1"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" name="pp_石榴" label="pp_石榴" enabled="false" visible="false" x="340" y="181" width="56" height="34"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="15" y="302" width="402" height="1"/>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="false" x="0" y="223" width="414" height="50">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Nick name" name="Nick name" label="Nick name" enabled="true" visible="false" x="18" y="237" width="74" height="22"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" name="pp_石榴" label="pp_石榴" enabled="false" visible="false" x="340" y="231" width="56" height="34"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="15" y="352" width="402" height="1"/>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="273" width="414" height="10"/>
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="false" x="0" y="283" width="414" height="50">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Gender" name="Gender" label="Gender" enabled="true" visible="false" x="17" y="297" width="52" height="22"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="18" y="332" width="378" height="2"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" name="Please select" label="Please select" enabled="false" visible="false" x="303" y="291" width="93" height="34"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="15" y="412" width="402" height="1"/>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="false" x="0" y="333" width="414" height="50">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Age" name="Age" label="Age" enabled="true" visible="false" x="18" y="347" width="28" height="22"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="18" y="382" width="378" height="1"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" name="Please select" label="Please select" enabled="false" visible="false" x="303" y="341" width="93" height="34"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="15" y="462" width="402" height="1"/>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="false" x="0" y="383" width="414" height="50">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Identity" name="Identity" label="Identity" enabled="true" visible="false" x="18" y="397" width="51" height="22"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="18" y="432" width="378" height="1"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" name="Postgraduate" label="Postgraduate" enabled="false" visible="false" x="302" y="391" width="94" height="34"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="15" y="512" width="402" height="1"/>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="false" x="0" y="433" width="414" height="50">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Bio" name="Bio" label="Bio" enabled="true" visible="false" x="18" y="447" width="23" height="22"/>
+                    <XCUIElementTypeButton type="XCUIElementTypeButton" name="Add a bio will help you get more followers" label="Add a bio will help you get more followers" enabled="false" visible="false" x="102" y="441" width="294" height="34"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="15" y="562" width="402" height="1"/>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="483" width="414" height="0"/>
+                </XCUIElementTypeTable>
+                <XCUIElementTypeButton type="XCUIElementTypeButton" name="Sign Out" label="Sign Out" enabled="true" visible="false" x="0" y="682" width="414" height="54"/>
+              </XCUIElementTypeOther>
+            </XCUIElementTypeOther>
+          </XCUIElementTypeOther>
+        </XCUIElementTypeOther>
+      </XCUIElementTypeOther>
+    </XCUIElementTypeOther>
+    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736"/>
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="6" y="526" width="402" height="204">
+        <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="6" y="526" width="402" height="53">
+          <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Please select gender" name="Please select gender" label="Please select gender" enabled="true" visible="true" x="23" y="542" width="149" height="21"/>
+          <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="24" y="578" width="366" height="1"/>
+        </XCUIElementTypeOther>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="6" y="580" width="402" height="100">
+          <XCUIElementTypeTable type="XCUIElementTypeTable" enabled="true" visible="true" x="6" y="580" width="402" height="100">
+            <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="true" x="6" y="580" width="402" height="50">
+              <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="21" y="623" width="305" height="1"/>
+              <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="23" y="629" width="368" height="1"/>
+              <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Male" name="Male" label="Male" enabled="true" visible="true" x="26" y="596" width="33" height="18"/>
+              <XCUIElementTypeButton type="XCUIElementTypeButton" name="samllapp ht eva checkicon" label="samllapp ht eva checkicon" enabled="false" visible="true" x="350" y="585" width="40" height="40"/>
+            </XCUIElementTypeCell>
+            <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="true" x="6" y="630" width="402" height="50">
+              <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="21" y="673" width="305" height="1"/>
+              <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="23" y="679" width="368" height="1"/>
+              <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Female" name="Female" label="Female" enabled="true" visible="true" x="25" y="646" width="51" height="18"/>
+              <XCUIElementTypeButton type="XCUIElementTypeButton" name="samllapp ht eva checkicon no" label="samllapp ht eva checkicon no" enabled="false" visible="true" x="350" y="635" width="40" height="40"/>
+            </XCUIElementTypeCell>
+          </XCUIElementTypeTable>
+        </XCUIElementTypeOther>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="6" y="680" width="402" height="50">
+          <XCUIElementTypeButton type="XCUIElementTypeButton" name="Cancel" label="Cancel" enabled="true" visible="true" x="6" y="680" width="201" height="50"/>
+          <XCUIElementTypeButton type="XCUIElementTypeButton" name="Confirm" label="Confirm" enabled="true" visible="true" x="207" y="680" width="201" height="50"/>
+        </XCUIElementTypeOther>
+      </XCUIElementTypeOther>
+    </XCUIElementTypeOther>
+  </XCUIElementTypeWindow>
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736"/>
+  </XCUIElementTypeWindow>
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeStatusBar type="XCUIElementTypeStatusBar" enabled="true" visible="true" x="0" y="0" width="414" height="20">
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="20"/>
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="20">
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="No SIM" label="No SIM" enabled="true" visible="true" x="6" y="0" width="41" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" value="SSID" name="3 of 3 Wi-Fi bars" label="3 of 3 Wi-Fi bars" enabled="true" visible="true" x="52" y="0" width="14" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="3:03 PM" label="3:03 PM" enabled="true" visible="true" x="184" y="0" width="50" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="97% battery power, Charging" label="97% battery power, Charging" enabled="true" visible="true" x="374" y="0" width="35" height="20"/>
+      </XCUIElementTypeOther>
+    </XCUIElementTypeStatusBar>
+  </XCUIElementTypeWindow>
+</XCUIElementTypeApplication></AppiumAUT>

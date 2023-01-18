@@ -1,0 +1,2 @@
+XCUIElementTypeImage[1] (196,700)(218,722) V.S. android.widget.Button[0] (526,1199)(739,1348)
+XCUIElementTypeStaticText[18] (17,631)(349,682) V.S. android.widget.Button[1] (739,1199)(975,1348)

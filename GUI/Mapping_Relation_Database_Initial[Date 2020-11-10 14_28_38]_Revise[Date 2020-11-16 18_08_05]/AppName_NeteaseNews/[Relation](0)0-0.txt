@@ -1,0 +1,4 @@
+XCUIElementTypeSwitch[3] (346,240)(416,273) V.S. android.widget.CheckBox[5] (894,1319)(1066,1381)
+XCUIElementTypeSwitch[4] (346,295)(416,328) V.S. android.widget.CheckBox[1] (894,503)(1066,565)
+XCUIElementTypeSwitch[8] (346,515)(416,548) V.S. android.widget.CheckBox[2] (894,707)(1066,769)
+XCUIElementTypeSwitch[9] (346,570)(416,603) V.S. android.widget.CheckBox[6] (894,1523)(1066,1585)

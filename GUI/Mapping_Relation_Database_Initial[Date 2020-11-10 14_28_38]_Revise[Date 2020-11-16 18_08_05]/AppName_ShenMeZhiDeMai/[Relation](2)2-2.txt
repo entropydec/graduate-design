@@ -1,0 +1,2 @@
+XCUIElementTypeOther[14] (348,84)(399,115) V.S. android.widget.Switch[0] (897,337)(1025,411)
+XCUIElementTypeButton[0] (0,20)(40,64) V.S. android.widget.ImageButton[0] (0,96)(154,250)

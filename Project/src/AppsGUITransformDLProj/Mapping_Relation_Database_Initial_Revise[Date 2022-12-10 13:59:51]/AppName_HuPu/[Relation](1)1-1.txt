@@ -1,0 +1,1 @@
+XCUIElementTypeStaticText[8] (15,340)(111,363) V.S. android.widget.TextView[5] (28,811)(994,867)

@@ -1,0 +1,3 @@
+XCUIElementTypeSwitch[0] (353,284)(404,315) V.S. android.view.View[0] (912,823)(1052,908)
+XCUIElementTypeSwitch[1] (353,328)(404,359) V.S. android.view.View[2] (912,944)(1052,1029)
+XCUIElementTypeSwitch[2] (353,372)(404,403) V.S. android.view.View[4] (912,1065)(1052,1150)

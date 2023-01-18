@@ -1,0 +1,3 @@
+XCUIElementTypeImage[0] (351,77)(397,98) V.S. android.widget.CheckBox[0] (906,257)(1033,315)
+XCUIElementTypeImage[1] (351,125)(397,147) V.S. android.widget.CheckBox[1] (906,396)(1033,454)
+XCUIElementTypeStaticText[2] (17,125)(351,147) V.S. android.widget.TextView[4] (47,397)(906,453)

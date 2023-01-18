@@ -1,0 +1,2 @@
+XCUIElementTypeButton[6] (368,179)(404,200) V.S. android.widget.CompoundButton[4] (958,1002)(1052,1060)
+XCUIElementTypeButton[8] (368,329)(404,350) V.S. android.widget.CompoundButton[6] (958,1371)(1052,1429)

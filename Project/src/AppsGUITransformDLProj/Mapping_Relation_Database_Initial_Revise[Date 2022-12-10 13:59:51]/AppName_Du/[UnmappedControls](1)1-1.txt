@@ -1,0 +1,15 @@
+[iOS]
+XCUIElementTypeOther[12](140,30)(274,54)
+XCUIElementTypeButton[1](370,30)(394,54)
+XCUIElementTypeOther[25](0,0)(0,0)
+XCUIElementTypeOther[1](0,0)(414,736)
+XCUIElementTypeOther[3](0,0)(414,20)
+XCUIElementTypeOther[6](6,0)(47,20)
+XCUIElementTypeOther[7](52,0)(66,20)
+XCUIElementTypeOther[8](181,0)(237,20)
+XCUIElementTypeOther[9](374,0)(409,20)
+[Android]
+android.widget.TextView[0](198,136)(626,210)
+android.widget.TextView[1](911,96)(939,250)
+android.widget.ImageView[0](958,96)(1052,250)
+android.webkit.WebView[0](0,250)(1080,2270)

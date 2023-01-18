@@ -1,0 +1,108 @@
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_KuGouMusic/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+///////[Relations] (5)5 V.S. 5
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_QQMusic/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_BaiduTranslate/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+///////[Relations] (5)5 V.S. 5
+///////[Relations] (6)6 V.S. 6
+///////[Relations] (7)7 V.S. 7
+///////[Relations] (8)8 V.S. 8
+///////[Relations] (9)9 V.S. 9
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_SinaNews/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_NeteaseMusic/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+///////[Relations] (5)5 V.S. 5
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_HuPu/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+///////[Relations] (5)5 V.S. 5
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_hema/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_TencentVideo/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_NeteaseNews/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_JiRiTouTiao/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_YouDaoDict/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_BiliBili/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_ShenMeZhiDeMai/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+///////[Relations] (5)5 V.S. 5
+///////[Relations] (6)6 V.S. 6
+///////[Relations] (7)7 V.S. 7
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_Du/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+///////[Relations] (5)5 V.S. 5
+///////[Relations] (6)6 V.S. 6
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_Boohee/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_JDMobile/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_BusinessWeek/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_ShiHuo/
+///////[Relations] (0)0 V.S. 0
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_QQBrowser/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+[AppPagesLocation] /Users/jiruihua/Desktop/AppGUIMapping/MappedAppPages/TestSet_Demo/AppName_keep/
+///////[Relations] (0)0 V.S. 0
+///////[Relations] (1)1 V.S. 1
+///////[Relations] (2)2 V.S. 2
+///////[Relations] (3)3 V.S. 3
+///////[Relations] (4)4 V.S. 4
+///////[Relations] (5)5 V.S. 5

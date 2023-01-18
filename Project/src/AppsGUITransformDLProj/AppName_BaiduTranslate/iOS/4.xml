@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><AppiumAUT><XCUIElementTypeApplication type="XCUIElementTypeApplication" name="Baidu Translate" label="Baidu Translate" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+        <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+          <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+            <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+              <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="20"/>
+                <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="20" width="414" height="44">
+                  <XCUIElementTypeButton type="XCUIElementTypeButton" enabled="true" visible="true" x="0" y="20" width="60" height="44"/>
+                  <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Favorites setting" name="Favorites setting" label="Favorites setting" enabled="true" visible="true" x="60" y="20" width="294" height="44"/>
+                </XCUIElementTypeOther>
+                <XCUIElementTypeTable type="XCUIElementTypeTable" enabled="true" visible="true" x="0" y="64" width="414" height="618">
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="true" x="0" y="64" width="414" height="49">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Collect to default notepad" name="Collect to default notepad" label="Collect to default notepad" enabled="true" visible="true" x="17" y="76" width="334" height="22"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="17" y="112" width="380" height="1"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="351" y="77" width="46" height="21">
+                      <XCUIElementTypeImage type="XCUIElementTypeImage" name="slide_closed" enabled="true" visible="false" x="351" y="77" width="46" height="21"/>
+                    </XCUIElementTypeOther>
+                  </XCUIElementTypeCell>
+                  <XCUIElementTypeCell type="XCUIElementTypeCell" enabled="true" visible="true" x="0" y="112" width="414" height="50">
+                    <XCUIElementTypeStaticText type="XCUIElementTypeStaticText" value="Cache all contents while marking words" name="Cache all contents while marking words" label="Cache all contents while marking words" enabled="true" visible="true" x="17" y="125" width="334" height="22"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="17" y="161" width="380" height="1"/>
+                    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="351" y="125" width="46" height="22">
+                      <XCUIElementTypeImage type="XCUIElementTypeImage" name="slide_closed" enabled="true" visible="false" x="351" y="125" width="46" height="22"/>
+                    </XCUIElementTypeOther>
+                  </XCUIElementTypeCell>
+                </XCUIElementTypeTable>
+              </XCUIElementTypeOther>
+            </XCUIElementTypeOther>
+          </XCUIElementTypeOther>
+        </XCUIElementTypeOther>
+      </XCUIElementTypeOther>
+    </XCUIElementTypeOther>
+  </XCUIElementTypeWindow>
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="false" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="736"/>
+  </XCUIElementTypeWindow>
+  <XCUIElementTypeWindow type="XCUIElementTypeWindow" enabled="true" visible="true" x="0" y="0" width="414" height="736">
+    <XCUIElementTypeStatusBar type="XCUIElementTypeStatusBar" enabled="true" visible="true" x="0" y="0" width="414" height="20">
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="false" x="0" y="0" width="414" height="20"/>
+      <XCUIElementTypeOther type="XCUIElementTypeOther" enabled="true" visible="true" x="0" y="0" width="414" height="20">
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="No SIM" label="No SIM" enabled="true" visible="true" x="6" y="0" width="41" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" value="SSID" name="3 of 3 Wi-Fi bars" label="3 of 3 Wi-Fi bars" enabled="true" visible="true" x="52" y="0" width="14" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="3:04 PM" label="3:04 PM" enabled="true" visible="true" x="184" y="0" width="50" height="20"/>
+        <XCUIElementTypeOther type="XCUIElementTypeOther" name="97% battery power, Charging" label="97% battery power, Charging" enabled="true" visible="true" x="374" y="0" width="35" height="20"/>
+      </XCUIElementTypeOther>
+    </XCUIElementTypeStatusBar>
+  </XCUIElementTypeWindow>
+</XCUIElementTypeApplication></AppiumAUT>

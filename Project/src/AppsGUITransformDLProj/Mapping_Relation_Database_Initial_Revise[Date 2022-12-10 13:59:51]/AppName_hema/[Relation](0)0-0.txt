@@ -1,0 +1,1 @@
+XCUIElementTypeSwitch[0] (338,157)(400,189) V.S. android.widget.ImageView[0] (989,424)(1039,474)

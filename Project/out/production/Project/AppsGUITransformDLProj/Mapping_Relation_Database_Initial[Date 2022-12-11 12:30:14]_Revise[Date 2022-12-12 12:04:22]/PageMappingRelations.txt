@@ -1,0 +1,1 @@
+[AppPagesLocation] /Users/suou/study/now/Project/src/AppsGUITransformDLProj/AppName_BaiduTranslate/

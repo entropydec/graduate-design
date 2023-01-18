@@ -1,0 +1,2 @@
+XCUIElementTypeButton[0] (0,22)(40,62) V.S. android.widget.ImageView[3] (0,96)(127,250)
+XCUIElementTypeButton[1] (366,16)(414,64) V.S. android.widget.ImageView[4] (953,123)(1052,222)

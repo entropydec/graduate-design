@@ -1,0 +1,6 @@
+XCUIElementTypeSwitch[0] (355,88)(406,120) V.S. android.widget.ToggleButton[0] (947,305)(1019,377)
+XCUIElementTypeSwitch[1] (355,138)(406,170) V.S. android.widget.ToggleButton[1] (947,443)(1019,515)
+XCUIElementTypeSwitch[2] (355,188)(406,220) V.S. android.widget.ToggleButton[2] (947,581)(1019,653)
+XCUIElementTypeSwitch[3] (355,238)(406,270) V.S. android.widget.ToggleButton[3] (947,719)(1019,791)
+XCUIElementTypeSwitch[4] (355,288)(406,320) V.S. android.widget.ToggleButton[4] (947,857)(1019,929)
+XCUIElementTypeSwitch[5] (355,338)(406,370) V.S. android.widget.ToggleButton[5] (947,995)(1019,1067)
