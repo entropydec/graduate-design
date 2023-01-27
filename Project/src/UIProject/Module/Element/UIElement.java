@@ -19,4 +19,16 @@ public class UIElement {
     public Size size;
 
     public List<UIElement> children;
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public Size getSize() {
+        return size;
+    }
+
+    public List<UIElement> getChildren() {
+        return children;
+    }
 }
