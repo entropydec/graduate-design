@@ -4,6 +4,7 @@ import AppsGUITransformDLProj.GUI.AndroidGUIElement;
 import AppsGUITransformDLProj.GUI.AndroidGUIPage;
 import AppsGUITransformDLProj.GUI.GUIPageXMLFileReader;
 import UIProject.Module.ChipAndPic;
+import UIProject.Module.PageModule;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -15,6 +16,7 @@ import java.io.OutputStream;
 import java.util.List;
 
 public class FileHelpler {
+
     static public ChipAndPic readXMLFile(String xmlPath, String picPath){
         ChipAndPic res=null;
         AndroidGUIPage page = GUIPageXMLFileReader.readAndroidPageXMLFile(xmlPath);
