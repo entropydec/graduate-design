@@ -13,14 +13,17 @@ public class Chip extends UIElement{
         super();
     }
 
-    public Chip(Position position,Size size,BufferedImage image){
+    public BufferedImage getImage() {
+        return image;
+    }
+
+    public Chip(Position position, Size size, BufferedImage image){
         super(position,size);
         this.image=image;
     }
 
-
-    public Chip(AndroidGUIElement age, BufferedImage image){
-        super(age,image);
-        this.image=image.getSubimage(position.x,position.y,size.width,size.height);
+    public Chip(AndroidGUIElement age, BufferedImage screenshot){
+        super(age,screenshot);
+        this.image=screenshot.getSubimage(position.x,position.y,size.width,size.height);
     }
 }

@@ -30,6 +30,14 @@ class Position{
         this.x=x;
         this.y=y;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 }
 
 class Size{
@@ -46,6 +54,14 @@ class Size{
     public Size(int w,int h){
         this.width=w;
         this.height=h;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
     }
 }
 
@@ -85,12 +101,20 @@ public class UIElement {
         this(new Position(),new Size());
     }
 
-    public Position getPosition() {
-        return position;
+    public int getStartX(){
+        return position.x;
     }
 
-    public Size getSize() {
-        return size;
+    public int getStartY(){
+        return position.y;
+    }
+
+    public int getWidth() {
+        return size.width;
+    }
+
+    public int getHeight() {
+        return size.height;
     }
 
     public List<UIElement> getChildren() {
@@ -112,6 +136,7 @@ public class UIElement {
             for (int i = 0; i < age.sibilings.size(); i++) {
                 if (!isChip(age.sibilings.get(i).EHead)) {
                     Domain domain = new Domain(age.sibilings.get(i), image);
+                    domain.drawFrame(image);
                     this.children.add(domain);
                 } else {
                     Chip chip = new Chip(age.sibilings.get(i), image);
@@ -141,7 +166,6 @@ public class UIElement {
         }
         if(screenshot!=null) {
             UIElement ui = new UIElement(page.elementRoot, screenshot);
-            int a=1;
         }
     }
 }

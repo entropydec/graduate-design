@@ -38,7 +38,7 @@ public class FileHelpler {
         };
     }
 
-    static private void saveImage(BufferedImage image, String path){
+    static public void saveImage(BufferedImage image, String path){
         int width=image.getWidth();
         int height=image.getHeight();
         Image _image=image.getScaledInstance(width, height, java.awt.Image.SCALE_SMOOTH);
