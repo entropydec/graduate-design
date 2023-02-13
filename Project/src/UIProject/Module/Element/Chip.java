@@ -26,4 +26,8 @@ public class Chip extends UIElement{
         super(age,screenshot);
         this.image=screenshot.getSubimage(position.x,position.y,size.width,size.height);
     }
+
+    public void setImage(BufferedImage image) {
+        this.image = image;
+    }
 }

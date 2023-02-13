@@ -3,15 +3,14 @@ package UIProject.Module.Element;
 import AppsGUITransformDLProj.GUI.AndroidGUIElement;
 import AppsGUITransformDLProj.GUI.AndroidGUIPage;
 import AppsGUITransformDLProj.GUI.GUIPageXMLFileReader;
-import UIProject.FileHelpler;
-import UIProject.Module.ChipAndPic;
-import UIProject.Module.PageModule;
+import UIProject.util.FileHelpler;
+import UIProject.util.JSONHelpler;
+import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,22 +74,32 @@ public class UIElement {
     public static final String TEXTVIEW="android.widget.TextView";
     public static final String EDITTEXT="android.widget.EditText";
 
+    public int id;
+
+    public String type;
+
+    public int depth;
+
     public Position position;
 
     public Size size;
+
+    public String description;
 
     public ArrayList<UIElement> children;
 
     public UIElement(Position position,Size size){
         this.position=position;
         this.size=size;
+        this.children=new ArrayList<>();
     }
 
     public UIElement(AndroidGUIElement age, BufferedImage image){
         this.position=new Position(age.Ex1, age.Ey1);
         this.size=new Size(age.Ex2-age.Ex1,age.Ey2-age.Ey1);
+        this.type=age.EHead;
+        this.id=age.lineNumber;
         this.children=new ArrayList<UIElement>();
-        //TODO:create children
         int count=age.sibilings.size();
         if(count!=0){
             createChildren(age, image);
@@ -117,18 +126,58 @@ public class UIElement {
         return size.height;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public int getDepth() {
+        return depth;
+    }
+
+    public String getType(){
+        return type;
+    }
+
+    public void setDepth(int depth){
+        this.depth=depth;
+    }
+
+    public void setId(int id){
+        this.id=id;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setX(int x){
+        this.position.x=x;
+    }
+
+    public void setY(int y){
+        this.position.y=y;
+    }
+
+    public void setWidth(int width){
+        this.size.width=width;
+    }
+
+    public void setHeight(int height){
+        this.size.height=height;
+    }
+
     public List<UIElement> getChildren() {
         return children;
     }
 
-    public  boolean isCoincide(AndroidGUIElement age1,AndroidGUIElement age2){
+    public boolean isCoincide(AndroidGUIElement age1,AndroidGUIElement age2){
         return age1.Ex1==age2.Ex1
                 &&age1.Ex2==age2.Ex2
                 &&age1.Ey1==age2.Ey1
                 &&age1.Ey2==age2.Ey2;
     }
 
-    public void createChildren(AndroidGUIElement age,BufferedImage image){
+    public void createChildren(AndroidGUIElement age, BufferedImage image){
         if(age.sibilings.size()==1&&isCoincide(age,age.sibilings.get(0))){
             createChildren(age.sibilings.get(0),image);
         }
@@ -166,6 +215,8 @@ public class UIElement {
         }
         if(screenshot!=null) {
             UIElement ui = new UIElement(page.elementRoot, screenshot);
+            JSONObject obj= JSONHelpler.ueTree2Json(ui);
+            FileHelpler.saveJson(obj,"data/j.json");
         }
     }
 }

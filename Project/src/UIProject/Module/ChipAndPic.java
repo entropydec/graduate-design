@@ -1,7 +1,7 @@
 package UIProject.Module;
 
 import AppsGUITransformDLProj.GUI.AndroidGUIElement;
-import UIProject.FileHelpler;
+import UIProject.util.FileHelpler;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -63,7 +63,7 @@ public class ChipAndPic {
     static public void main(String args[]){
         ChipAndPic tmp=FileHelpler.readXMLFile("data/0.xml","data/0.png");
         List<BufferedImage> list=tmp.getImageOfChips();
-        FileHelpler.saveChipsImage(list,"data/chips/");
+        FileHelpler.saveImages(list,"data/chips/");
         tmp.drawImage();
     }
 }

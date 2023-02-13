@@ -1,0 +1,145 @@
+{
+    "depth": 0,
+    "children": [{
+        "depth": 1,
+        "children": [
+            {
+                "depth": 2,
+                "children": [
+                    {
+                        "depth": 3,
+                        "children": [],
+                        "x": 0,
+                        "width": 155,
+                        "y": 96,
+                        "id": 10,
+                        "type": "android.widget.ImageView",
+                        "class": "Chip",
+                        "height": 121
+                    },
+                    {
+                        "depth": 3,
+                        "children": [],
+                        "x": 0,
+                        "width": 94,
+                        "y": 96,
+                        "id": 11,
+                        "type": "android.widget.TextView",
+                        "class": "Chip",
+                        "height": 121
+                    },
+                    {
+                        "depth": 3,
+                        "children": [],
+                        "x": 434,
+                        "width": 212,
+                        "y": 125,
+                        "id": 12,
+                        "type": "android.widget.TextView",
+                        "class": "Chip",
+                        "height": 63
+                    },
+                    {
+                        "depth": 3,
+                        "children": [],
+                        "x": 898,
+                        "width": 182,
+                        "y": 96,
+                        "id": 13,
+                        "type": "android.widget.TextView",
+                        "class": "Chip",
+                        "height": 121
+                    }
+                ],
+                "x": 0,
+                "width": 1080,
+                "y": 96,
+                "id": 8,
+                "type": "android.widget.LinearLayout",
+                "class": "Domain",
+                "height": 121
+            },
+            {
+                "depth": 2,
+                "children": [],
+                "x": 0,
+                "width": 1080,
+                "y": 217,
+                "id": 16,
+                "type": "android.widget.TextView",
+                "class": "Chip",
+                "height": 94
+            },
+            {
+                "depth": 2,
+                "children": [
+                    {
+                        "depth": 3,
+                        "children": [],
+                        "x": 0,
+                        "width": 908,
+                        "y": 314,
+                        "id": 18,
+                        "type": "android.widget.EditText",
+                        "class": "Chip",
+                        "height": 138
+                    },
+                    {
+                        "depth": 3,
+                        "children": [],
+                        "x": 908,
+                        "width": 23,
+                        "y": 355,
+                        "id": 19,
+                        "type": "android.widget.TextView",
+                        "class": "Chip",
+                        "height": 56
+                    },
+                    {
+                        "depth": 3,
+                        "children": [],
+                        "x": 953,
+                        "width": 99,
+                        "y": 333,
+                        "id": 20,
+                        "type": "android.widget.ImageView",
+                        "class": "Chip",
+                        "height": 99
+                    }
+                ],
+                "x": 0,
+                "width": 1080,
+                "y": 314,
+                "id": 17,
+                "type": "android.widget.RelativeLayout",
+                "class": "Domain",
+                "height": 138
+            },
+            {
+                "depth": 2,
+                "children": [],
+                "x": 47,
+                "width": 785,
+                "y": 480,
+                "id": 22,
+                "type": "android.widget.TextView",
+                "class": "Chip",
+                "height": 49
+            }
+        ],
+        "x": 0,
+        "width": 1080,
+        "y": 96,
+        "id": 6,
+        "type": "android.widget.FrameLayout",
+        "class": "Domain",
+        "height": 2174
+    }],
+    "x": 0,
+    "width": 1080,
+    "y": 0,
+    "id": 0,
+    "type": "android.widget.FrameLayout",
+    "class": "Domain",
+    "height": 2270
+}
