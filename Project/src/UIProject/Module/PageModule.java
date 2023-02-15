@@ -143,6 +143,8 @@ public class PageModule {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        if(pm1 == null)
+            return;
         BufferedImage image1=pm1.createPicture();
         FileHelpler.saveImage(image1,"data/0/out1.png");
 
