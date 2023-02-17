@@ -5,6 +5,7 @@ import UIProject.util.FileHelpler;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 public class Domain extends UIElement{
 
@@ -29,8 +30,7 @@ public class Domain extends UIElement{
 
     public void drawFrame(BufferedImage screenshot){
         BufferedImage image= FileHelpler.copyImage(screenshot);
-        this.outerFrame = image.getSubimage(position.x,position.y,size.width,size.height);
-        Graphics2D graphics=outerFrame.createGraphics();
+        Graphics2D graphics=image.createGraphics();
         for(int i=0;i<children.size();i++){
             UIElement child=children.get(i);
             int x= child.getStartX();
@@ -41,5 +41,12 @@ public class Domain extends UIElement{
             graphics.fillRect(x,y,width,height);
         }
         graphics.dispose();
+        this.outerFrame = image.getSubimage(position.x,position.y,size.width,size.height);
+    }
+
+    public ArrayList<UIElement> getExchangeableChildren(){
+        ArrayList<UIElement> result=new ArrayList<UIElement>();
+
+        return result;
     }
 }

@@ -8,6 +8,7 @@ import UIProject.util.JSONHelpler;
 import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -189,13 +190,23 @@ public class UIElement {
                     this.children.add(domain);
                 } else {
                     Chip chip = new Chip(age.sibilings.get(i), image);
+                    chip.removeDomain(image);
                     this.children.add(chip);
                 }
             }
         }
     }
 
-    static public boolean isChip(String head){
+    public boolean isFit(BufferedImage img){
+        int width= img.getWidth();
+        int height=img.getHeight();
+        if(this.getWidth()==width
+                &&this.getHeight()==height)
+            return true;
+        return false;
+    }
+
+    public static boolean isChip(String head){
         if(head.equals(UIElement.LINEARLAYOUT)
                 ||head.equals(UIElement.FRAMELAYOUT)
                 ||head.equals(UIElement.RELATIVELAYOUT))

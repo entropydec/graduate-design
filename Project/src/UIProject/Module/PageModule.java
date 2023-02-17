@@ -6,6 +6,7 @@ import UIProject.util.FileHelpler;
 import UIProject.Module.Element.Chip;
 import UIProject.Module.Element.Domain;
 import UIProject.Module.Element.UIElement;
+import UIProject.util.ImageHelpler;
 import UIProject.util.JSONHelpler;
 import org.json.JSONObject;
 
@@ -14,12 +15,20 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Stack;
 
 public class PageModule {
 
     public BufferedImage screenshot;
 
     public UIElement root;
+
+    public ArrayList<Domain> domains;
+
+    public ArrayList<Chip> chips;
+
+    public boolean zoom;
 
     public PageModule(AndroidGUIPage agp, String picPath){
         File pic=new File(picPath);
@@ -36,13 +45,37 @@ public class PageModule {
             Domain domain=(Domain) this.root;
             domain.drawFrame(screenshot);
         }
-        this.setTreeDepth();
+        this.initTreeDepth();
+        this.initTwoLists();
     }
 
     public PageModule(String pmPath) throws IOException {
+        this.zoom=false;
         JSONObject object=FileHelpler.readJson(pmPath+"ueTree.json");
         this.root= JSONHelpler.json2UETree(object);
         setNodeImage(this.root,pmPath+"images/");
+        this.initTwoLists();
+    }
+
+    public void initTwoLists(){
+        this.domains=new ArrayList<Domain>();
+        this.chips=new ArrayList<Chip>();
+        Stack<UIElement> stack=new Stack<UIElement>();
+        stack.push(this.root);
+        while(!stack.isEmpty()){
+            UIElement ue=stack.pop();
+            if(ue instanceof Domain){
+                Domain domain=(Domain) ue;
+                this.domains.add(domain);
+            }
+            else{
+                Chip chip=(Chip) ue;
+                this.chips.add(chip);
+            }
+            for(int i=0;i<ue.getChildren().size();i++){
+                stack.push(ue.getChildren().get(i));
+            }
+        }
     }
 
     public void setNodeImage(UIElement node, String imageDir){
@@ -57,6 +90,11 @@ public class PageModule {
             System.out.println("image is null in setNodeImage");
             return;
         }
+
+        if(!node.isFit(image)
+                &&this.zoom)
+            image= ImageHelpler.zoomImage(image,node.getWidth(),node.getHeight());
+
         if(node instanceof Chip){
             Chip chip=(Chip) node;
             chip.setImage(image);
@@ -74,11 +112,22 @@ public class PageModule {
         return this.root;
     }
 
+    public ArrayList<Domain> getDomains(){
+        return this.domains;
+    }
+
+    public ArrayList<Chip> getChips() {
+        return this.chips;
+    }
+
     public BufferedImage createPicture(){
-        BufferedImage buffImg = new BufferedImage(1080, 2270, BufferedImage.TYPE_INT_RGB);
+        int width=this.root.getWidth();
+        int height=this.root.getHeight();
+        BufferedImage buffImg = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Graphics2D graphics=buffImg.createGraphics();
         drawImage(this.root,graphics);
         graphics.dispose();
+        this.screenshot=buffImg;
         return buffImg;
     }
 
@@ -104,7 +153,7 @@ public class PageModule {
         }
     }
 
-    public void setTreeDepth(){
+    public void initTreeDepth(){
         this.setNodeDepth(this.root,0);
     }
 
@@ -136,23 +185,27 @@ public class PageModule {
         }
     }
 
-    public static void main(String[] args) {
-        PageModule pm1=null;
+    public static void test1(){
+        PageModule pm=null;
         try {
-            pm1=new PageModule("data/0/");
+            pm=new PageModule("data/9/");
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if(pm1 == null)
+        if(pm == null)
             return;
-        BufferedImage image1=pm1.createPicture();
-        FileHelpler.saveImage(image1,"data/0/out1.png");
+        BufferedImage image1=pm.createPicture();
+        FileHelpler.saveImage(image1,"data/9/out.png");
+    }
 
-        AndroidGUIPage page = GUIPageXMLFileReader.readAndroidPageXMLFile("data/0/0.xml");
-        PageModule pm = new PageModule(page, "data/0/0.png");
-        FileHelpler.savePageModule(pm,"data/0/");
+    public static void test2(){
+        AndroidGUIPage page = GUIPageXMLFileReader.readAndroidPageXMLFile("data/9/9.xml");
+        PageModule pm = new PageModule(page, "data/9/9.png");
+        FileHelpler.savePageModule(pm,"data/9/");
         pm.printTree();
-        BufferedImage image=pm.createPicture();
-        FileHelpler.saveImage(image,"data/0/out.png");
+    }
+
+    public static void main(String[] args) {
+        test1();
     }
 }
