@@ -70,6 +70,7 @@ public class UIElement {
     public static final String LINEARLAYOUT="android.widget.LinearLayout";
     public static final String FRAMELAYOUT="android.widget.FrameLayout";
     public static final String RELATIVELAYOUT="android.widget.RelativeLayout";
+    public static final String VIEWGROUP="android.widget.ViewGroup";
 
     public static final String IMAGEVIEW="android.widget.ImageView";
     public static final String TEXTVIEW="android.widget.TextView";
@@ -209,7 +210,8 @@ public class UIElement {
     public static boolean isChip(String head){
         if(head.equals(UIElement.LINEARLAYOUT)
                 ||head.equals(UIElement.FRAMELAYOUT)
-                ||head.equals(UIElement.RELATIVELAYOUT))
+                ||head.equals(UIElement.RELATIVELAYOUT)
+                ||head.equals(UIElement.VIEWGROUP))
             return false;
         else
             return true;
