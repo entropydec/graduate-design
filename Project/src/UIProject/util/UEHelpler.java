@@ -3,7 +3,7 @@ package UIProject.util;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class ImageHelpler {
+public class UEHelpler {
 
     public static BufferedImage zoomImage(BufferedImage img, int width, int height){
         BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
@@ -13,4 +13,5 @@ public class ImageHelpler {
         graphics.dispose();
         return result;
     }
+
 }

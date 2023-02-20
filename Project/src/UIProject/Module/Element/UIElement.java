@@ -8,11 +8,11 @@ import UIProject.util.JSONHelpler;
 import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 class Position{
@@ -70,11 +70,12 @@ public class UIElement {
     public static final String LINEARLAYOUT="android.widget.LinearLayout";
     public static final String FRAMELAYOUT="android.widget.FrameLayout";
     public static final String RELATIVELAYOUT="android.widget.RelativeLayout";
-    public static final String VIEWGROUP="android.widget.ViewGroup";
+    public static final String VIEWGROUP="android.view.ViewGroup";
 
     public static final String IMAGEVIEW="android.widget.ImageView";
     public static final String TEXTVIEW="android.widget.TextView";
     public static final String EDITTEXT="android.widget.EditText";
+    public static final String VIEW="android.view.View";
 
     public int id;
 
@@ -90,10 +91,13 @@ public class UIElement {
 
     public ArrayList<UIElement> children;
 
+    public HashSet<String> types;
+
     public UIElement(Position position,Size size){
         this.position=position;
         this.size=size;
         this.children=new ArrayList<>();
+        this.types=new HashSet<>();
     }
 
     public UIElement(AndroidGUIElement age, BufferedImage image){
@@ -102,6 +106,7 @@ public class UIElement {
         this.type=age.EHead;
         this.id=age.lineNumber;
         this.children=new ArrayList<UIElement>();
+        this.types=new HashSet<>();
         int count=age.sibilings.size();
         if(count!=0){
             createChildren(age, image);
@@ -140,6 +145,10 @@ public class UIElement {
         return type;
     }
 
+    public HashSet<String> getTypes(){
+        return types;
+    }
+
     public void setDepth(int depth){
         this.depth=depth;
     }
@@ -153,11 +162,21 @@ public class UIElement {
     }
 
     public void setX(int x){
+        int oldX=this.position.x;
         this.position.x=x;
+        for(int i=0;i<children.size();i++){
+            UIElement ue=children.get(i);
+            ue.setX(ue.getStartX()+x-oldX);
+        }
     }
 
     public void setY(int y){
+        int oldY=this.position.y;
         this.position.y=y;
+        for(int i=0;i<children.size();i++){
+            UIElement ue=children.get(i);
+            ue.setY(ue.getStartY()+y-oldY);
+        }
     }
 
     public void setWidth(int width){
@@ -217,7 +236,23 @@ public class UIElement {
             return true;
     }
 
-    static public void main(String args[]){
+    public String getExchangeKey(int keyType){
+        String result= "";
+        if(keyType==Domain.TYPEANDSIZE)
+            result=this.getType();
+        return result;
+    }
+
+    public void changePositionWith(UIElement ue){
+        int x= this.getStartX();
+        int y= this.getStartY();
+        this.setX(ue.getStartX());
+        this.setY(ue.getStartY());
+        this.setX(x);
+        this.setY(y);
+    }
+
+    static public void main(String[] args){
         AndroidGUIPage page = GUIPageXMLFileReader.readAndroidPageXMLFile("data/0.xml");
         File pic=new File("data/0.png");
         BufferedImage screenshot=null;

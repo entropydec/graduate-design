@@ -6,7 +6,7 @@ import UIProject.util.FileHelpler;
 import UIProject.Module.Element.Chip;
 import UIProject.Module.Element.Domain;
 import UIProject.Module.Element.UIElement;
-import UIProject.util.ImageHelpler;
+import UIProject.util.UEHelpler;
 import UIProject.util.JSONHelpler;
 import org.json.JSONObject;
 
@@ -15,7 +15,8 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Stack;
 
 public class PageModule {
@@ -24,9 +25,11 @@ public class PageModule {
 
     public UIElement root;
 
-    public ArrayList<Domain> domains;
+    public HashMap<Integer,Domain> domains;
 
-    public ArrayList<Chip> chips;
+    public HashMap<Integer,Chip> chips;
+
+    public HashSet<String> types;
 
     public boolean zoom;
 
@@ -46,31 +49,40 @@ public class PageModule {
             domain.drawFrame(screenshot);
         }
         this.initTreeDepth();
-        this.initTwoLists();
+        this.initSet();
     }
 
-    public PageModule(String pmPath) throws IOException {
+    public PageModule(String pmPath) {
         this.zoom=false;
-        JSONObject object=FileHelpler.readJson(pmPath+"ueTree.json");
-        this.root= JSONHelpler.json2UETree(object);
-        setNodeImage(this.root,pmPath+"images/");
-        this.initTwoLists();
+        JSONObject object= null;
+        try {
+            object = FileHelpler.readJson(pmPath+"ueTree.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(object!=null) {
+            this.root = JSONHelpler.json2UETree(object);
+            setNodeImage(this.root, pmPath + "images/");
+            this.initSet();
+        }
     }
 
-    public void initTwoLists(){
-        this.domains=new ArrayList<Domain>();
-        this.chips=new ArrayList<Chip>();
+    public void initSet(){
+        this.domains=new HashMap<Integer,Domain>();
+        this.chips=new HashMap<Integer,Chip>();
+        this.types=new HashSet<String>();
         Stack<UIElement> stack=new Stack<UIElement>();
         stack.push(this.root);
         while(!stack.isEmpty()){
             UIElement ue=stack.pop();
+            this.types.add(ue.getType());
             if(ue instanceof Domain){
                 Domain domain=(Domain) ue;
-                this.domains.add(domain);
+                this.domains.put(domain.getId(),domain);
             }
             else{
                 Chip chip=(Chip) ue;
-                this.chips.add(chip);
+                this.chips.put(chip.getId(),chip);
             }
             for(int i=0;i<ue.getChildren().size();i++){
                 stack.push(ue.getChildren().get(i));
@@ -93,7 +105,7 @@ public class PageModule {
 
         if(!node.isFit(image)
                 &&this.zoom)
-            image= ImageHelpler.zoomImage(image,node.getWidth(),node.getHeight());
+            image= UEHelpler.zoomImage(image,node.getWidth(),node.getHeight());
 
         if(node instanceof Chip){
             Chip chip=(Chip) node;
@@ -112,11 +124,11 @@ public class PageModule {
         return this.root;
     }
 
-    public ArrayList<Domain> getDomains(){
+    public HashMap<Integer,Domain> getDomains(){
         return this.domains;
     }
 
-    public ArrayList<Chip> getChips() {
+    public HashMap<Integer,Chip> getChips() {
         return this.chips;
     }
 
@@ -164,6 +176,16 @@ public class PageModule {
         }
     }
 
+    public void switchTwoNode(int id1,int id2){
+        UIElement ue1=domains.get(id1);
+        if(ue1==null)
+            ue1=chips.get(id1);
+        UIElement ue2=domains.get(id2);
+        if(ue2==null)
+            ue2=chips.get(id2);
+        ue1.changePositionWith(ue2);
+    }
+
     public void printTree(){
         this.printNodeTree(root);
     }
@@ -187,13 +209,7 @@ public class PageModule {
 
     public static void test1(){
         PageModule pm=null;
-        try {
-            pm=new PageModule("data/9/");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if(pm == null)
-            return;
+        pm=new PageModule("data/9/");
         BufferedImage image1=pm.createPicture();
         FileHelpler.saveImage(image1,"data/9/out.png");
     }
@@ -202,10 +218,11 @@ public class PageModule {
         AndroidGUIPage page = GUIPageXMLFileReader.readAndroidPageXMLFile("data/9/9.xml");
         PageModule pm = new PageModule(page, "data/9/9.png");
         FileHelpler.savePageModule(pm,"data/9/");
-        pm.printTree();
+        System.out.print(pm.types);
     }
 
     public static void main(String[] args) {
+        test2();
         test1();
     }
 }
