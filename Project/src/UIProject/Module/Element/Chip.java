@@ -29,6 +29,13 @@ public class Chip extends UIElement{
         this.image=screenshot.getSubimage(position.x,position.y,size.width,size.height);
     }
 
+    @Override
+    public Chip clone() {
+        Chip clone = (Chip) super.clone();
+        clone.image=FileHelpler.copyImage(image);
+        return clone;
+    }
+
     public void setImage(BufferedImage image) {
         this.image = image;
     }

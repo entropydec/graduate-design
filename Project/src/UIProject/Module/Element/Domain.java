@@ -11,6 +11,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class Domain extends UIElement{
 
@@ -39,6 +40,13 @@ public class Domain extends UIElement{
 
     public Domain(){
         super();
+    }
+
+    @Override
+    public Domain clone() {
+        Domain clone = (Domain) super.clone();
+        clone.outerFrame=FileHelpler.copyImage(outerFrame);
+        return clone;
     }
 
     public BufferedImage getOuterFrame() {
@@ -70,7 +78,6 @@ public class Domain extends UIElement{
         this.outerFrame = image.getSubimage(position.x,position.y,size.width,size.height);
     }
 
-    //提取出的可交换列表不考虑size，size在进行交换的时候再考虑
     public ArrayList<ArrayList<UIElement>> getExchangeableChildren(int method, int keyType){
         ArrayList<ArrayList<UIElement>> result= new ArrayList<>();
         if(method==EXCHANGECHIPINDOMAIN)
@@ -90,7 +97,25 @@ public class Domain extends UIElement{
     //交换domain中的chip，直接用chip的属性构造map的key
     public ArrayList<ArrayList<UIElement>> getExchangeableChildren_1(int keyType){
         ArrayList<ArrayList<UIElement>> result=new ArrayList<>();
-        HashMap<String, ArrayList<UIElement>> map=new HashMap<String, ArrayList<UIElement>>();
+        for (int i=0;i<children.size()-1;i++) {
+            for (int j = i + 1; j < children.size(); j++) {
+                UIElement ue1 = children.get(i);
+                UIElement ue2 = children.get(j);
+                if(ue1 instanceof Chip
+                        &&ue2 instanceof Chip) {
+                    String key1 = ue1.getAttributeKey(keyType);
+                    String key2 = ue2.getAttributeKey(keyType);
+                    if (key1.equals(key2)
+                            && ue1.isAboutSizeOf(ue2)) {
+                        ArrayList<UIElement> list = new ArrayList<UIElement>();
+                        list.add(ue1);
+                        list.add(ue2);
+                        result.add(list);
+                    }
+                }
+            }
+        }
+        /*HashMap<String, ArrayList<UIElement>> map=new HashMap<String, ArrayList<UIElement>>();
         for (UIElement child : this.children) {
             if(child instanceof Chip) {
                 String key = child.getExchangeKey(keyType);
@@ -108,14 +133,34 @@ public class Domain extends UIElement{
         map.values().forEach(list->{
             if(list.size()>1)
                 result.add(list);
-        });
+        });*/
         return result;
     }
 
     //交换domain中的domain，需要比较domain的相似度
     public ArrayList<ArrayList<UIElement>> getExchangeableChildren_2(int keyType1, int keyType2){
         ArrayList<ArrayList<UIElement>> result=new ArrayList<>();
-        HashMap<String, ArrayList<UIElement>> map=new HashMap<String, ArrayList<UIElement>>();
+        for (int i=0;i<children.size()-1;i++) {
+            for (int j = i + 1; j < children.size(); j++) {
+                UIElement ue1 = children.get(i);
+                UIElement ue2 = children.get(j);
+                if(ue1 instanceof Domain
+                        &&ue2 instanceof Domain) {
+                    Domain domain1=(Domain) ue1;
+                    Domain domain2=(Domain) ue2;
+                    JSONObject key1 = domain1.getJSONKey(keyType1,keyType2);
+                    JSONObject key2 = domain2.getJSONKey(keyType1,keyType2);
+                    if (key1.equals(key2)
+                            && ue1.isAboutSizeOf(ue2)) {
+                        ArrayList<UIElement> list = new ArrayList<UIElement>();
+                        list.add(ue1);
+                        list.add(ue2);
+                        result.add(list);
+                    }
+                }
+            }
+        }
+        /*HashMap<String, ArrayList<UIElement>> map=new HashMap<String, ArrayList<UIElement>>();
         for(UIElement child : this.children) {
             if(child instanceof Domain){
                 Domain domain=(Domain) child;
@@ -134,7 +179,7 @@ public class Domain extends UIElement{
         map.values().forEach(list->{
             if(list.size()>1)
                 result.add(list);
-        });
+        });*/
         return result;
     }
 
@@ -180,11 +225,7 @@ public class Domain extends UIElement{
 
     public static void test1(){
         PageModule pm=null;
-        try {
-            pm=new PageModule("data/9/");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        pm=new PageModule("data/9/");
         if(pm == null)
             return;
         for(Domain domain:pm.getDomains().values()) {
@@ -201,11 +242,7 @@ public class Domain extends UIElement{
 
     public static void test2(){
         PageModule pm=null;
-        try {
-            pm=new PageModule("data/9/");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        pm=new PageModule("data/9/");
         if(pm == null)
             return;
         for(Domain domain:pm.getDomains().values()) {
@@ -220,8 +257,31 @@ public class Domain extends UIElement{
         }
     }
 
+    //test the copy()
+    public static void test3(){
+        PageModule pm=null;
+        pm=new PageModule("data/9/");
+        if(pm == null)
+            return;
+        for(Domain domain:pm.getDomains().values()) {
+            ArrayList<ArrayList<UIElement>> list = domain.getExchangeableChildren(Domain.EXCHANGECHIPINDOMAIN, Domain.TYPEANDSIZE);
+            if(list.size()>0&&domain.getId()==9) {
+                int id1 = list.get(0).get(0).getId();
+                int id2 = list.get(0).get(1).getId();
+                PageModule pm2=pm.clone();
+                pm2.switchTwoNode(id1, id2);
+                BufferedImage image1 = pm.createPicture();
+                FileHelpler.saveImage(image1, "data/9/out_31.png");
+
+                BufferedImage image2 = pm2.createPicture();
+                FileHelpler.saveImage(image2, "data/9/out_32.png");
+            }
+        }
+    }
+
     public static void main(String[] args){
         test1();
         test2();
+        test3();
     }
 }

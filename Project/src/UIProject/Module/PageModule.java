@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Stack;
 
-public class PageModule {
+public class PageModule implements Cloneable{
 
     public BufferedImage screenshot;
 
@@ -64,6 +64,22 @@ public class PageModule {
             this.root = JSONHelpler.json2UETree(object);
             setNodeImage(this.root, pmPath + "images/");
             this.initSet();
+        }
+    }
+
+    @Override
+    public PageModule clone() {
+        try {
+            PageModule clone = (PageModule) super.clone();
+            clone.screenshot=FileHelpler.copyImage(this.screenshot);
+            clone.root=this.root.clone();
+            HashMap<Integer,Domain> domains=new HashMap<Integer,Domain>();
+            HashMap<Integer,Chip> chips=new HashMap<Integer,Chip>();
+            HashSet<String> types=new HashSet<String>();
+            clone.initSet();
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
         }
     }
 

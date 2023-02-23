@@ -12,10 +12,11 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
-class Position{
+class Position implements Cloneable{
 
     public int x;
 
@@ -38,9 +39,19 @@ class Position{
     public int getY() {
         return y;
     }
+
+    @Override
+    public Position clone() {
+        try {
+            Position clone = (Position) super.clone();
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }
 
-class Size{
+class Size implements Cloneable{
 
     public int width;
 
@@ -63,9 +74,19 @@ class Size{
     public int getHeight() {
         return height;
     }
+
+    @Override
+    public Size clone() {
+        try {
+            Size clone = (Size) super.clone();
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
+    }
 }
 
-public class UIElement {
+public class UIElement implements Cloneable{
 
     public static final String LINEARLAYOUT="android.widget.LinearLayout";
     public static final String FRAMELAYOUT="android.widget.FrameLayout";
@@ -106,7 +127,7 @@ public class UIElement {
         this.type=age.EHead;
         this.id=age.lineNumber;
         this.children=new ArrayList<UIElement>();
-        this.types=new HashSet<>();
+        this.types=new HashSet<String>();
         int count=age.sibilings.size();
         if(count!=0){
             createChildren(age, image);
@@ -115,6 +136,30 @@ public class UIElement {
 
     public UIElement(){
         this(new Position(),new Size());
+    }
+
+    @Override
+    public UIElement clone() {
+        try {
+            UIElement clone = (UIElement) super.clone();
+            clone.position=this.position.clone();
+            clone.size=this.size.clone();
+            clone.children = new ArrayList<UIElement>();
+            for(UIElement child:this.children){
+                if(child instanceof Domain){
+                    Domain domain=(Domain) child;
+                    clone.children.add(domain.clone());
+                }
+                else if(child instanceof Chip){
+                    Chip chip=(Chip) child;
+                    clone.children.add(chip.clone());
+                }
+            }
+            clone.types=new HashSet<String>(this.types);
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 
     public int getStartX(){
@@ -226,6 +271,17 @@ public class UIElement {
         return false;
     }
 
+    public boolean isAboutSizeOf(UIElement ue){
+        int widthDiff=Math.abs(this.getWidth()-ue.getWidth());
+        int heightDiff=Math.abs(this.getHeight()-ue.getHeight());
+        int widthSum=this.getWidth()+ue.getWidth();
+        int heightSum=this.getHeight()+ue.getHeight();
+        if ((widthDiff*10<widthSum)
+                &&(heightDiff*10<heightSum))
+            return true;
+        return false;
+    }
+
     public static boolean isChip(String head){
         if(head.equals(UIElement.LINEARLAYOUT)
                 ||head.equals(UIElement.FRAMELAYOUT)
@@ -236,7 +292,7 @@ public class UIElement {
             return true;
     }
 
-    public String getExchangeKey(int keyType){
+    public String getAttributeKey(int keyType){
         String result= "";
         if(keyType==Domain.TYPEANDSIZE)
             result=this.getType();
@@ -248,11 +304,16 @@ public class UIElement {
         int y= this.getStartY();
         this.setX(ue.getStartX());
         this.setY(ue.getStartY());
-        this.setX(x);
-        this.setY(y);
+        ue.setX(x);
+        ue.setY(y);
     }
 
     static public void main(String[] args){
+        UIElement ue1=new UIElement();
+        ue1.setX(1);
+        UIElement ue2=ue1.clone();
+        ue2.setY(2);
+
         AndroidGUIPage page = GUIPageXMLFileReader.readAndroidPageXMLFile("data/0.xml");
         File pic=new File("data/0.png");
         BufferedImage screenshot=null;
