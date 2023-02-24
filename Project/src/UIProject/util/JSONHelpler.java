@@ -6,7 +6,10 @@ import UIProject.Module.Element.UIElement;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+//用于处理json结构
 public class JSONHelpler {
+
+    //将ue结构转为json
     public static JSONObject ueTree2Json(UIElement ue){
         JSONObject result=new JSONObject();
         result.put("id",ue.getId());
@@ -31,6 +34,7 @@ public class JSONHelpler {
         return result;
     }
 
+    //json转为ue结构（不包含bufferedimage结构的转换）
     public static UIElement json2UETree(JSONObject obj){
         UIElement result;
         String objClass=obj.get("class").toString();

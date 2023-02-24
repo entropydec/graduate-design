@@ -18,7 +18,6 @@ public class Domain extends UIElement{
     public static final int EXCHANGECHIPINDOMAIN=0;
     public static final int EXCHANGEDOMAININDOMAIN=1;
 
-    //提取出可交换列表的暂时不考虑size，在交换时再考虑
     public static final int TYPEANDSIZE=2;
     public static final int ONLYSIZE=3;
 

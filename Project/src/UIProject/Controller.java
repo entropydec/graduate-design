@@ -6,6 +6,7 @@ import UIProject.Module.Element.Domain;
 import UIProject.Module.Element.UIElement;
 import UIProject.Module.PageModule;
 import UIProject.util.FileHelpler;
+import UIProject.util.UEHelpler;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -29,8 +30,17 @@ public class Controller {
         FileHelpler.saveImage(img,picPath);
     }
 
-    public static ArrayList<PageModule> createSimilarPageModuleWithUEID(PageModule pm, int id){
+    public static ArrayList<PageModule> createSimilarPageModuleWithUEID(PageModule pm, int id, int method, int keyType1, int keyType2){
         ArrayList<PageModule> result=new ArrayList<PageModule>();
+        Domain domain=pm.getDomains().get(id);
+        ArrayList<ArrayList<UIElement>> couples=new ArrayList<>();
+        if(method==Domain.EXCHANGECHIPINDOMAIN) {
+            couples = domain.getExchangeableChildren(method, keyType1);
+        }
+        else if(method==Domain.EXCHANGEDOMAININDOMAIN){
+            couples=domain.getExchangeableChildren(method,keyType1,keyType2);
+        }
+        ArrayList<ArrayList<Integer>> exchangeIDs= UEHelpler.getExchangeID(couples);
 
         return result;
     }
