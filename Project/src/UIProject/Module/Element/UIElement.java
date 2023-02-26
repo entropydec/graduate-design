@@ -5,6 +5,8 @@ import AppsGUITransformDLProj.GUI.AndroidGUIPage;
 import AppsGUITransformDLProj.GUI.GUIPageXMLFileReader;
 import UIProject.util.FileHelpler;
 import UIProject.util.JSONHelpler;
+import UIProject.util.UEHelpler;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import javax.imageio.ImageIO;
@@ -97,6 +99,9 @@ public class UIElement implements Cloneable{
     public static final String TEXTVIEW="android.widget.TextView";
     public static final String EDITTEXT="android.widget.EditText";
     public static final String VIEW="android.view.View";
+
+    public static final int CLASS=100;
+    public static final int TYPE=101;
 
     public int id;
 
@@ -194,6 +199,43 @@ public class UIElement implements Cloneable{
         return types;
     }
 
+    public JSONObject getJSONKey(int keyType1, int keyType2) {
+        JSONObject result=new JSONObject();
+        if(keyType1== UEHelpler.DOMAINSIMILARITY_1){
+            result.put("type",this.type);
+        }
+        else if(keyType1==UEHelpler.DOMAINSIMILARITY_2){
+            result.put("type",this.type);
+            result.put("number",this.children.size());
+        }
+        else if(keyType1==UEHelpler.DOMAINSIMILARITY_3){
+            result.put("number",this.children.size());
+            result.put("children",this.getJSONKeyOfChildren(keyType2));
+        }
+        /*
+        else if(keyType1==DOMAINSIMILARITY_4){
+            result.put("type",this.type);
+            result.put("number",this.children.size());
+            result.put("children",this.getJSONKeyOfChildren(keyType2));
+        }*/
+        return result;
+    }
+
+    public JSONArray getJSONKeyOfChildren(int keyType){
+        JSONArray list=new JSONArray();
+        for(UIElement ue:this.children){
+            JSONObject obj=new JSONObject();
+            if(keyType==UEHelpler.CHILDRENSIMILARITY_1){
+                if(ue instanceof Domain)
+                    obj.put("class","Domain");
+                else if(ue instanceof Chip)
+                    obj.put("class","Chip");
+            }
+            list.put(obj);
+        }
+        return list;
+    }
+
     public void setDepth(int depth){
         this.depth=depth;
     }
@@ -232,7 +274,7 @@ public class UIElement implements Cloneable{
         this.size.height=height;
     }
 
-    public List<UIElement> getChildren() {
+    public ArrayList<UIElement> getChildren() {
         return children;
     }
 
@@ -294,8 +336,14 @@ public class UIElement implements Cloneable{
 
     public String getAttributeKey(int keyType){
         String result= "";
-        if(keyType==Domain.TYPEANDSIZE)
-            result=this.getType();
+        if(keyType==TYPE)
+            result=type;
+        else if(keyType==CLASS) {
+            if(isChip(type))
+                return "Chip";
+            else
+                return "Domain";
+        }
         return result;
     }
 

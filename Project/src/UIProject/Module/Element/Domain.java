@@ -3,6 +3,7 @@ package UIProject.Module.Element;
 import AppsGUITransformDLProj.GUI.AndroidGUIElement;
 import UIProject.Module.PageModule;
 import UIProject.util.FileHelpler;
+import UIProject.util.UEHelpler;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -17,23 +18,6 @@ public class Domain extends UIElement{
 
     public static final int EXCHANGECHIPINDOMAIN=0;
     public static final int EXCHANGEDOMAININDOMAIN=1;
-
-    public static final int TYPEANDSIZE=2;
-    public static final int ONLYSIZE=3;
-
-    //仅domain的type和size相同即可
-    public static final int DOMAINSIMILARITY_1=4;
-    //domain的type和size相同，孩子的数量相同
-    public static final int DOMAINSIMILARITY_2=5;
-    //domain的size相同，孩子数量相同，孩子的分布相似（如何界定相似？）
-    public static final int DOMAINSIMILARITY_3=6;
-    //domain的type和size相同，孩子数量相同，孩子的分布相似
-    public static final int DOMAINSIMILARITY_4=7;
-
-    //孩子具有同数量的Domain和Chip
-    public static final int CHILDRENSIMILARITY_1=8;
-    //孩子具有类似的位置分布
-    public static final int CHILDRENSIMILARITY_2=9;
 
     public BufferedImage outerFrame;
 
@@ -82,7 +66,7 @@ public class Domain extends UIElement{
         if(method==EXCHANGECHIPINDOMAIN)
             result=getExchangeableChildren_1(keyType);
         else if(method==EXCHANGEDOMAININDOMAIN)
-            result=getExchangeableChildren_2(keyType, CHILDRENSIMILARITY_1);
+            result=getExchangeableChildren_2(keyType, UEHelpler.CHILDRENSIMILARITY_1);
         return result;
     }
 
@@ -102,10 +86,9 @@ public class Domain extends UIElement{
                 UIElement ue2 = children.get(j);
                 if(ue1 instanceof Chip
                         &&ue2 instanceof Chip) {
-                    String key1 = ue1.getAttributeKey(keyType);
-                    String key2 = ue2.getAttributeKey(keyType);
-                    if (key1.equals(key2)
-                            && ue1.isAboutSizeOf(ue2)) {
+                    Chip chip1=(Chip) ue1;
+                    Chip chip2=(Chip) ue2;
+                    if (UEHelpler.compareChips(chip1,chip2,keyType)) {
                         ArrayList<UIElement> list = new ArrayList<UIElement>();
                         list.add(ue1);
                         list.add(ue2);
@@ -147,10 +130,7 @@ public class Domain extends UIElement{
                         &&ue2 instanceof Domain) {
                     Domain domain1=(Domain) ue1;
                     Domain domain2=(Domain) ue2;
-                    JSONObject key1 = domain1.getJSONKey(keyType1,keyType2);
-                    JSONObject key2 = domain2.getJSONKey(keyType1,keyType2);
-                    if (key1.equals(key2)
-                            && ue1.isAboutSizeOf(ue2)) {
+                    if (UEHelpler.compareDomains(domain1,domain2,keyType1,keyType2)) {
                         ArrayList<UIElement> list = new ArrayList<UIElement>();
                         list.add(ue1);
                         list.add(ue2);
@@ -182,53 +162,13 @@ public class Domain extends UIElement{
         return result;
     }
 
-    public JSONObject getJSONKey(int keyType1, int keyType2) {
-        JSONObject result=new JSONObject();
-        if(keyType1==DOMAINSIMILARITY_1){
-            result.put("type",this.type);
-        }
-        else if(keyType1==DOMAINSIMILARITY_2){
-            result.put("type",this.type);
-            result.put("number",this.children.size());
-        }
-        else if(keyType1==DOMAINSIMILARITY_3){
-            result.put("number",this.children.size());
-            result.put("children",this.getJSONKeyOfChildren(keyType2));
-        }
-        else if(keyType1==DOMAINSIMILARITY_4){
-            result.put("type",this.type);
-            result.put("number",this.children.size());
-            result.put("children",this.getJSONKeyOfChildren(keyType2));
-        }
-        return result;
-    }
-
-    public JSONArray getJSONKeyOfChildren(int keyType){
-        JSONArray list=new JSONArray();
-        for(UIElement ue:this.children){
-            JSONObject obj=new JSONObject();
-            if(keyType==CHILDRENSIMILARITY_1){
-                if(ue instanceof Domain)
-                    obj.put("class","Domain");
-                else if(ue instanceof Chip)
-                    obj.put("class","Chip");
-            }
-            else if(keyType==CHILDRENSIMILARITY_2){
-                //TODO:
-
-            }
-            list.put(obj);
-        }
-        return list;
-    }
-
     public static void test1(){
         PageModule pm=null;
         pm=new PageModule("data/9/");
         if(pm == null)
             return;
         for(Domain domain:pm.getDomains().values()) {
-            ArrayList<ArrayList<UIElement>> list = domain.getExchangeableChildren(Domain.EXCHANGEDOMAININDOMAIN, Domain.DOMAINSIMILARITY_1);
+            ArrayList<ArrayList<UIElement>> list = domain.getExchangeableChildren(Domain.EXCHANGEDOMAININDOMAIN, UEHelpler.DOMAINSIMILARITY_1);
             if(list.size()>0&&domain.getId()==7) {
                 int id1 = list.get(0).get(0).getId();
                 int id2 = list.get(0).get(1).getId();
@@ -245,7 +185,7 @@ public class Domain extends UIElement{
         if(pm == null)
             return;
         for(Domain domain:pm.getDomains().values()) {
-            ArrayList<ArrayList<UIElement>> list = domain.getExchangeableChildren(Domain.EXCHANGECHIPINDOMAIN, Domain.TYPEANDSIZE);
+            ArrayList<ArrayList<UIElement>> list = domain.getExchangeableChildren(Domain.EXCHANGECHIPINDOMAIN, UEHelpler.TYPEANDSIZE);
             if(list.size()>0&&domain.getId()==9) {
                 int id1 = list.get(0).get(0).getId();
                 int id2 = list.get(0).get(1).getId();
@@ -263,7 +203,7 @@ public class Domain extends UIElement{
         if(pm == null)
             return;
         for(Domain domain:pm.getDomains().values()) {
-            ArrayList<ArrayList<UIElement>> list = domain.getExchangeableChildren(Domain.EXCHANGECHIPINDOMAIN, Domain.TYPEANDSIZE);
+            ArrayList<ArrayList<UIElement>> list = domain.getExchangeableChildren(Domain.EXCHANGECHIPINDOMAIN, UEHelpler.TYPEANDSIZE);
             if(list.size()>0&&domain.getId()==9) {
                 int id1 = list.get(0).get(0).getId();
                 int id2 = list.get(0).get(1).getId();
