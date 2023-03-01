@@ -87,9 +87,10 @@ public class Controller {
 
     public static void main(String[] args){
         PageModule pm=Controller.createPageModuleByPMDirectory("data/9/");
-        PageModule pm2=Controller.createOneSimilarPageModule(pm,Domain.EXCHANGEDOMAININDOMAIN,UEHelpler.DOMAINSIMILARITY_2,UEHelpler.CHILDRENSIMILARITY_1);
-
-        BufferedImage img=pm2.createPicture();
-        FileHelpler.saveImage(img,"data/9/random.png");
+        for(int i=0;i<10;i++) {
+            PageModule pm2 = Controller.createOneSimilarPageModule(pm, Domain.EXCHANGECHIPINDOMAIN, UEHelpler.TYPEANDSIZE, UEHelpler.CHILDRENSIMILARITY_1);
+            BufferedImage img = pm2.createPicture();
+            FileHelpler.saveImage(img, "data/9/random/random"+i+".png");
+        }
     }
 }

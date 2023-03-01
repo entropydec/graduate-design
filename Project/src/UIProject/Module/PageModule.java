@@ -148,6 +148,14 @@ public class PageModule implements Cloneable{
         return this.chips;
     }
 
+    public int getWidth(){
+        return root.getWidth();
+    }
+
+    public int getHeight(){
+        return root.getHeight();
+    }
+
     public BufferedImage createPicture(){
         int width=this.root.getWidth();
         int height=this.root.getHeight();
