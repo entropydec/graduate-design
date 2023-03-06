@@ -11,22 +11,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UEHelpler {
-    public static final int ONLYSIZE=2;
-    public static final int TYPEANDSIZE=3;
+    public static final int ONLYSIZE=10;
+    public static final int TYPEANDSIZE=11;
 
     //仅domain的type和size相同即可
-    public static final int DOMAINSIMILARITY_1=4;
+    public static final int DOMAINSIMILARITY_1=12;
     //domain的type和size相同，孩子的数量相同
-    public static final int DOMAINSIMILARITY_2=5;
+    public static final int DOMAINSIMILARITY_2=13;
     //domain的size相同，孩子数量相同，孩子的分布相似（如何界定相似？）
-    public static final int DOMAINSIMILARITY_3=6;
+    public static final int DOMAINSIMILARITY_3=14;
     //domain的type和size相同，孩子数量相同，孩子的分布相似
-    public static final int DOMAINSIMILARITY_4=7;
+    public static final int DOMAINSIMILARITY_4=15;
 
     //孩子具有同数量的Domain和Chip
-    public static final int CHILDRENSIMILARITY_1=8;
+    public static final int CHILDRENSIMILARITY_1=16;
     //孩子具有较高的相似性，分布相似，对应的孩子具有相似的属性
-    public static final int CHILDRENSIMILARITY_2=9;
+    public static final int CHILDRENSIMILARITY_2=17;
 
     public static BufferedImage zoomImage(BufferedImage img, int width, int height){
         BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);

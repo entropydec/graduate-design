@@ -18,6 +18,7 @@ public class Domain extends UIElement{
 
     public static final int EXCHANGECHIPINDOMAIN=0;
     public static final int EXCHANGEDOMAININDOMAIN=1;
+    public static final int CHIPANDDOMAIN=2;
 
     public BufferedImage outerFrame;
 
@@ -74,6 +75,15 @@ public class Domain extends UIElement{
         ArrayList<ArrayList<UIElement>> result= new ArrayList<>();
         if(method==EXCHANGEDOMAININDOMAIN)
             result=getExchangeableChildren_2(keyType1, keyType2);
+        return result;
+    }
+
+    public ArrayList<ArrayList<UIElement>> getExchangeableChildren(int method, int keyType0, int keyType1, int keyType2){
+        ArrayList<ArrayList<UIElement>> result= new ArrayList<>();
+        if(method==CHIPANDDOMAIN) {
+            result = getExchangeableChildren_2(keyType1, keyType2);
+            result.addAll(getExchangeableChildren_1(keyType0));
+        }
         return result;
     }
 
