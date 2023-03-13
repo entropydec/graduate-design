@@ -28,6 +28,7 @@ public class UEHelpler {
     //孩子具有较高的相似性，分布相似，对应的孩子具有相似的属性
     public static final int CHILDRENSIMILARITY_2=17;
 
+    //对图片进行缩放
     public static BufferedImage zoomImage(BufferedImage img, int width, int height){
         BufferedImage result = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
         Image _img = img.getScaledInstance(width , height, Image.SCALE_DEFAULT);
@@ -37,6 +38,7 @@ public class UEHelpler {
         return result;
     }
 
+    //获得ue的id
     public static ArrayList<ArrayList<Integer>> getExchangeID(ArrayList<ArrayList<UIElement>> couples){
         ArrayList<ArrayList<Integer>> result=new ArrayList<ArrayList<Integer>>();
         for(ArrayList<UIElement> couple:couples){
@@ -50,6 +52,7 @@ public class UEHelpler {
         return result;
     }
 
+    //比较chip数据结构的相似度
     public static boolean compareChips(Chip chip1, Chip chip2, int keyType){
         if(keyType<ONLYSIZE
             ||keyType>TYPEANDSIZE)
@@ -63,6 +66,7 @@ public class UEHelpler {
         return false;
     }
 
+    //比较domain元素的相似度
     public static boolean compareDomains(Domain domain1, Domain domain2, int keyType1, int keyType2){
         if(keyType1<DOMAINSIMILARITY_1
             ||keyType1>DOMAINSIMILARITY_4
@@ -94,16 +98,27 @@ public class UEHelpler {
         return false;
     }
 
+    //获得一个不大于2的n次方的随机数的二进制表示
     public static ArrayList<Boolean> generateRandomList(int n){
         ArrayList<Boolean> result=new ArrayList<>();
         double random_d = Math.random() * Math.pow(2, n);
         int random=(int) random_d;
-        for(int i=0;i<n;i++){
-            if(random%2==1)
+        result=getBinaryList(random, n);
+        return result;
+    }
+
+    //获得整数n的二进制表示
+    public static ArrayList<Boolean> getBinaryList(int n, int size){
+        if(n>=Math.pow(2,size)){
+            return null;
+        }
+        ArrayList<Boolean> result=new ArrayList<>();
+        for(int i=0;i<size;i++){
+            if(n%2==1)
                 result.add(true);
             else
                 result.add(false);
-            random=random/2;
+            n=n/2;
         }
         return result;
     }

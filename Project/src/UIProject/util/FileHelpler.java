@@ -15,7 +15,9 @@ import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class FileHelpler {
 
@@ -119,8 +121,18 @@ public class FileHelpler {
         return b;
     }
 
+    public static ArrayList<String> getFileNamesOf(String path){
+        ArrayList<String> result=new ArrayList<>();
+        File file=new File(path);
+        for(File f: Objects.requireNonNull(file.listFiles())){
+            if(f.isDirectory())
+                result.add(f.getName());
+        }
+        return result;
+    }
+
     public static void main(String[] args) throws IOException {
-        JSONObject object=FileHelpler.readJson("data/0/ueTree.json");
-        UIElement ue=JSONHelpler.json2UETree(object);
+        //JSONObject object=FileHelpler.readJson("data/0/ueTree.json");
+        //UIElement ue=JSONHelpler.json2UETree(object);
     }
 }

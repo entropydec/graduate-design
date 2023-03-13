@@ -89,7 +89,7 @@ public class Switcher {
         return result;
     }
 
-    //TODO:利用参数列表进行操作
+    //ODO:利用参数列表进行操作
     public static PageModule createOneSimilarPageModule(PageModule pm, ArrayList<Integer> params){
         PageModule result=pm.clone();
         ArrayList<ArrayList<Integer>> exchangeIDs= getExchangeableID(pm,params);
