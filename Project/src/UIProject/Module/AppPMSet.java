@@ -27,9 +27,10 @@ public class AppPMSet {
         this.pmMap=new HashMap<>();
         ArrayList<String> scenes= FileHelpler.getFileNamesOf(appPath);
 
-        for(String scene: scenes){
-            ArrayList<PageModule> pms=new ArrayList<>();
-
+        for(String sceneName: scenes){
+            String path=appPath+sceneName;
+            Scene scene=new Scene(path);
+            this.pmMap.put(sceneName,scene);
         }
     }
 

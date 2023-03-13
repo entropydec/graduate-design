@@ -1,12 +1,12 @@
 package UIProject.Module;
 
 import AppsGUITransformDLProj.GUI.AndroidGUIPage;
-import AppsGUITransformDLProj.GUI.GUIPageXMLFileReader;
 import UIProject.util.FileHelpler;
 import UIProject.Module.Element.Chip;
 import UIProject.Module.Element.Domain;
 import UIProject.Module.Element.UIElement;
-import UIProject.util.UEHelpler;
+import UIProject.Controller.PMHelpler;
+import UIProject.Controller.UEHelpler;
 import UIProject.util.JSONHelpler;
 import org.json.JSONObject;
 
@@ -33,13 +33,8 @@ public class PageModule implements Cloneable{
 
     public boolean zoom;
 
-    public PageModule(AndroidGUIPage agp, String picPath){
-        File pic=new File(picPath);
-        try {
-            this.screenshot= ImageIO.read(pic);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+    public PageModule(AndroidGUIPage agp, BufferedImage pic){
+
         if(UIElement.isChip(agp.elementRoot.EHead)) {
             this.root = new Chip(agp.elementRoot, screenshot);
         }
@@ -48,6 +43,9 @@ public class PageModule implements Cloneable{
             Domain domain=(Domain) this.root;
             domain.drawFrame(screenshot);
         }
+
+        this.screenshot=pic;
+
         this.initTreeDepth();
         this.initSet();
     }
@@ -239,8 +237,9 @@ public class PageModule implements Cloneable{
     }
 
     public static void test2(){
-        AndroidGUIPage page = GUIPageXMLFileReader.readAndroidPageXMLFile("data/9/9.xml");
-        PageModule pm = new PageModule(page, "data/9/9.png");
+        PageModule pm = PMHelpler.
+                createPageModuleByXMLAndPicture(
+                        "data/9/9.xml","data/9/9.png");
         FileHelpler.savePageModule(pm,"data/9/");
         System.out.print(pm.types);
     }

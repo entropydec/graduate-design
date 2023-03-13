@@ -1,17 +1,32 @@
-package UIProject.util;
+package UIProject.Controller;
 
 import AppsGUITransformDLProj.GUI.AndroidGUIPage;
 import AppsGUITransformDLProj.GUI.GUIPageXMLFileReader;
 import UIProject.Module.Element.Domain;
 import UIProject.Module.PageModule;
+import UIProject.util.FileHelpler;
 
+import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class PMHelpler {
+
     //通过截图和xml布局文件构造页面模型
+    //TODO:读取失败的操作
     public static PageModule createPageModuleByXMLAndPicture(String xmlPath, String picPath){
         AndroidGUIPage apg=GUIPageXMLFileReader.readAndroidPageXMLFile(xmlPath);
-        PageModule result=new PageModule(apg,picPath);
+
+        BufferedImage screenshot=null;
+        File pic=new File(picPath);
+        try {
+            screenshot= ImageIO.read(pic);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        PageModule result=new PageModule(apg,screenshot);
         //FileHelpler.savePageModule(result,pmPath);
         return result;
     }

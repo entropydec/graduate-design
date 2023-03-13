@@ -134,5 +134,6 @@ public class FileHelpler {
     public static void main(String[] args) throws IOException {
         //JSONObject object=FileHelpler.readJson("data/0/ueTree.json");
         //UIElement ue=JSONHelpler.json2UETree(object);
+        getFileNamesOf("data/");
     }
 }

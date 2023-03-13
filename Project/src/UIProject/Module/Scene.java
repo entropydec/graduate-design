@@ -1,7 +1,9 @@
 package UIProject.Module;
 
 import UIProject.util.FileHelpler;
+import UIProject.Controller.PMHelpler;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class Scene {
@@ -23,14 +25,31 @@ public class Scene {
         this.pageModules=new ArrayList<>(pageModules);
     }
 
-    public Scene(String name, String path){
-        this.sceneName=name;
+    public Scene(String path){
+        File file=new File(path);
+        this.sceneName=file.getName();
 
-        //TODO:读取Scene的path
+        this.pageModules=new ArrayList<>();
         ArrayList<String> orders= FileHelpler.getFileNamesOf(path);
-        for(String order:orders){
 
+        //TODO：
+        //判断该pm文件夹是xml和picture
+        //            或者是pmdir
+        for(String order:orders){
+            String orderPath=path+order;
+            ArrayList<String> filesInOrder=FileHelpler.getFileNamesOf(orderPath);
+
+
+            String xml=path+order+XML;
+            String pic=path+order+PICTURE;
+            PageModule pm=PMHelpler.createPageModuleByXMLAndPicture(xml,pic);
+            this.pageModules.add(pm);
         }
+    }
+
+    public Scene(String name, String path){
+        this(path);
+        this.sceneName=name;
     }
 
     public String getSceneName(){

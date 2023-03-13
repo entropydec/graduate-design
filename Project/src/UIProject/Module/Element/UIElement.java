@@ -5,7 +5,7 @@ import AppsGUITransformDLProj.GUI.AndroidGUIPage;
 import AppsGUITransformDLProj.GUI.GUIPageXMLFileReader;
 import UIProject.util.FileHelpler;
 import UIProject.util.JSONHelpler;
-import UIProject.util.UEHelpler;
+import UIProject.Controller.UEHelpler;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -14,9 +14,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 
 class Position implements Cloneable{
 

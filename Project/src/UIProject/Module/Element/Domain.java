@@ -3,16 +3,11 @@ package UIProject.Module.Element;
 import AppsGUITransformDLProj.GUI.AndroidGUIElement;
 import UIProject.Module.PageModule;
 import UIProject.util.FileHelpler;
-import UIProject.util.UEHelpler;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import UIProject.Controller.UEHelpler;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 
 public class Domain extends UIElement{
 

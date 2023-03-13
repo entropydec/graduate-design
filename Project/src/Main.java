@@ -1,15 +1,14 @@
-import UIProject.Controller;
 import UIProject.Module.PageModule;
 import UIProject.util.FileHelpler;
-import UIProject.util.Switcher;
+import UIProject.Controller.PMHelpler;
+import UIProject.Controller.Switcher;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 
 public class Main {
 
     public static void pre(){
-        PageModule pm=Controller.createPageModuleByXMLAndPicture("data/input/example.xml","data/input/example.png");
+        PageModule pm= PMHelpler.createPageModuleByXMLAndPicture("data/input/example.xml","data/input/example.png");
         pm.printTree();
         FileHelpler.savePageModule(pm,"data/output/");
 
