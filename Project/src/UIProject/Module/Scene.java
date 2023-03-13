@@ -1,8 +1,13 @@
 package UIProject.Module;
 
+import UIProject.util.FileHelpler;
+
 import java.util.ArrayList;
 
 public class Scene {
+
+    public static final String XML="page.xml";
+    public static final String PICTURE="page.png";
 
     String sceneName;
 
@@ -22,6 +27,10 @@ public class Scene {
         this.sceneName=name;
 
         //TODO:读取Scene的path
+        ArrayList<String> orders= FileHelpler.getFileNamesOf(path);
+        for(String order:orders){
+
+        }
     }
 
     public String getSceneName(){
